@@ -65,58 +65,54 @@
         <h3>Cadastro do Profissional</h3> <br>
         
          <form id="cad_profissional" action="" method="POST">
-           <label>Login*</label>
-           <input size="65" type="text" id="login" placeholder="Digite seu Login.."/>
+           <label>*Login:</label>
+           <input size="72" type="text" id="login" placeholder="Digite seu Login.."/>
        
-           <label>Nome Completo*</label>
-           <input size="54" type="text" id="nomecompleto" placeholder="Seu nome completo.."/>
+           <label>*Nome Completo:</label>
+           <input size="60" type="text" id="nomecompleto" placeholder="Seu nome completo.."/>
 
-           <label>Endereço*</label>
-           <input size="61" type="text" id="endereco" placeholder="Ex.: Rua da árvore, 123"/>
+           <label>*Endereço:</label>
+           <input size="67" type="text" id="endereco" placeholder="Ex.: Rua da árvore, 123"/>
            
-           <label>Bairro*</label>
-           <input size="24" type="text" id="bairro" placeholder="Seu bairro.."/>
+           <label>*Bairro:</label>
+           <input size="30" type="text" id="bairro" placeholder="Seu bairro.."/>
 
-           &nbsp;&nbsp;
+           <label>*Cidade:</label>
+           <input size="25" type="text" id="cidade" placeholder="Sua Cidade.."/>
 
-           <label>Cidade*</label>
-           <input size="24" type="text" id="bairro" placeholder="Sua Cidade.."/>
+           <label>*Email:</label>
+           <input size="72" type="email" id="email" placeholder="Seu Email.." />
 
-           <label>Email*</label>
-           <input size="65" type="email" id="email" placeholder="Seu Email.." />
-
-           <label>Telefone</label>
+           <label>Telefone:</label>
            <input type="number" id="telefone" placeholder="Digite seu Telefone.." />
 
-            <!-- Espaço entre labels -->
-           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <!-- Falta Espaço entre labels -->     
 
-           <label>Celular</label>
+           <label>Celular:</label>
            <input type="number" id="celular" placeholder="Digite seu Celular.." /><br>
            
-           <label>Data de Nascimento*</label>
+           <label>*Data de Nascimento:</label>
            <input  type="date" id="nascimento" />
 
-           &nbsp;
-
-           <label>CPF*</label>
-           <input size="21" type="text" name="cpf" maxlength="11" onblur="return verificarCPF(this.value)" placeholder="Digite seu CPF.."/>
-            
-
+           <label>*CPF:</label>
+           <input size="25" type="text" name="cpf" maxlength="11" onblur="return verificarCPF(this.value)" placeholder="Digite seu CPF.."/>
+			 
+			<hr>
+			<br>
             <h3>Criar Senha</h3>
             <br>
 
-           <label >Senha*</label> <br>
+           <label>*Senha:</label> <br>
            <input size="25" type="password"  id="senha" placeholder="Digite Senha.." pattern="(?=.*\d)(?=.*[a-z]).{8,}" title="A senha deve possuir ao menos um número e uma letra, e pelo menos 8 ou mais caracteres" />
             <br>
-           <label>Confirmação de Senha*</label> <br>
+           <label>*Confirmação de Senha:</label> <br>
            <input size="25" type="password" id="confirmsenha" placeholder="Repita a Senha.."/>
             <br>
         
            <input type="submit" value="Cadastrar"/>
          </form>
          
-             <p class="campos"><strong><em>*Campos Obrigatórios</em></strong></p>
+         <p class="campos"><strong><em>*Campos Obrigatórios</em></strong></p>
 </div>
 
 

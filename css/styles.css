@@ -92,6 +92,7 @@ input[type=submit]:hover {
   background-color: rgb(157, 221, 161);
 }
 
+
 .button-ok {
   width: 270px;
   height: 50px;
@@ -137,12 +138,7 @@ p.campos {
 	padding: 0;
 }
 
-/*
-
-MENU
-
-*/
-
+/* MENU */
 
 ul.menu {
     list-style-type: none;
