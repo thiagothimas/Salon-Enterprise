@@ -1,0 +1,30 @@
+﻿<form action="/Fornecedor/Adiciona" method="post">
+    @Html.AntiForgeryToken()
+    @*Html.ValidationMessage("produto.Invalido")*@
+    <h2>Cadastrar Fornecedor</h2><br />
+
+    <label for="nome">Nome:</label>
+    <input id="nome" name="fornecedor.Nome" class="form-control" />
+    @*<input id="nome" name="fornecedor.Nome" value="@ViewBag.Fornecedor.Nome"/>*@
+    @Html.ValidationMessage("fornecedor.Nome")
+
+    <label for="cnpj">CNPJ:</label>
+    <input id="cnpj" name="fornecedor.Cnpj" class="form-control" />
+    @*<input id="cnpj" name="fornecedor.Cnpj" value="@ViewBag.Fornecedor.Cnpj"/>*@
+    @Html.ValidationMessage("fornecedor.Cnpj")
+
+    @*Adicionar combo_box para determinar uma categoria do produto*@
+    @*<label for="categoria">Categoria:</label>
+        <select id="categoria" name="produto.categoriaId">
+            @foreach (var categoria in ViewBag.Categorias)
+            {
+                <option value="@categoria.Id" selected="@categoria.Id.Equals(ViewBag.Produto.CategoriaId)">
+                @categoria.Nome
+                </option>
+            }
+        </select>*@
+
+    <input type="submit" value="Cadastrar" />
+    <a href="/Fornecedor/Index" class="btn btn-success btn-lg" role="button">Voltar</a>
+
+</form>

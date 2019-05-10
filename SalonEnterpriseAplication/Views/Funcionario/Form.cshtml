@@ -1,0 +1,80 @@
+﻿<form action="/Funcionario/Adiciona" method="post">
+    @Html.AntiForgeryToken()
+
+    <h4>Cadastro do Funcionario</h4><br />
+    <label for="nome">Nome:</label>
+    <input id="nome" name="funcionario.Nome" class="form-control" />
+    @*<input id="nome" name="funcionario.Nome" value="@ViewBag.Funcionario.Nome"/>*@
+    @Html.ValidationMessage("funcionario.Nome")
+
+    <label for="telefone">Telefone:</label>
+    <input id="telefone" name="funcionario.Telefone" class="form-control" />
+    @*<input id="telefone" name="funcionario.Telefone" value="@ViewBag.Funcionario.Telefone"/>*@
+    @Html.ValidationMessage("funcionario.Telefone")
+
+    <label for="DataDeNascimento">Data de Nascimento:</label>
+    <input id="DataDeNascimento" name="funcionario.DataDeNascimento" class="form-control" />
+    @*<input id="DataDeNascimento" name="funcionario.DataDeNascimento" value="@ViewBag.Funcionario.DataDeNascimento"/>*@
+    @Html.ValidationMessage("funcionario.DataDeNascimento")
+
+    <label for="endereco">Endereço:</label>
+    <input id="endereco" name="funcionario.Endereco" class="form-control" />
+    @*<input id="telefone" name="funcionario.Endereco" value="@ViewBag.Funcionario.Endereco"/>*@
+    @Html.ValidationMessage("funcionario.Endereco")
+
+    <label for="sexo">Sexo:</label>
+    <input id="sexo" name="funcionario.Sexo" class="form-control" />
+    @*<input id="sexo" name="funcionario.Sexo" value="@ViewBag.Funcionario.Sexo"/>*@
+    @Html.ValidationMessage("funcionario.Sexo")
+
+    <label for="rg">RG:</label>
+    <input id="rg" name="funcionario.Rg" class="form-control" />
+    @*<input id="telefone" name="funcionario.Rg" value="@ViewBag.Funcionario.Rg"/>*@
+    @Html.ValidationMessage("funcionario.Rg")
+
+
+    <label for="cpf">CPF:</label>
+    <input id="cpf" name="funcionario.Cpf" class="form-control" />
+    @*<input id="cpf" name="funcionario.Cpf" value="@ViewBag.Funcionario.Cpf"/>*@
+    @Html.ValidationMessage("funcionario.Cpf")
+
+    <label for="cargo">Cargo:</label>
+    <input id="cargo" name="funcionario.Cargo" class="form-control" />
+    @*<input id="cargo" name="funcionario.Cargo" value="@ViewBag.Funcionario.Cargo"/>*@
+    @Html.ValidationMessage("funcionario.Cargo")
+
+    <br /><br /><br /><h4>Login Funcionario</h4><br />
+
+    <label for="login">Login:</label>
+    <input id="login" name="funcionario.Login" class="form-control" />
+    @*<input id="login" name="funcionario.Login" value="@ViewBag.Funcionario.Login"/>*@
+    @Html.ValidationMessage("funcionario.Login")
+
+    <label for="senha">Senha:</label>
+    <input id="senha" name="funcionario.Senha" class="form-control" />
+    @*<input id="telefone" name="funcionario.Senha" value="@ViewBag.Funcionario.Senha"/>*@
+    @Html.ValidationMessage("funcionario.Senha")
+
+    <label for="confSenha">Confirma Senha:</label>
+    <input id="confSenha" name="funcionario.ConfirmaSenha" class="form-control" />
+    @*<input id="confSenha" name="funcionario.ConfirmaSenha" value="@ViewBag.Funcionario.ConfirmaSenha"/>*@
+    @Html.ValidationMessage("funcionario.ConfirmaSenha")
+
+    @Html.ValidationMessage("Senha.Invalida")
+
+    @*Adicionar combo_box para determinar uma categoria do produto*@
+    @*<label for="categoria">Categoria:</label>
+        <select id="categoria" name="produto.categoriaId">
+            @foreach (var categoria in ViewBag.Categorias)
+            {
+                <option value="@categoria.Id" selected="@categoria.Id.Equals(ViewBag.Produto.CategoriaId)">
+                @categoria.Nome
+                </option>
+            }
+        </select>*@
+
+    <input type="submit" value="Cadastrar" />
+    <a href="/Funcionario/Index" class="btn btn-success btn-lg" role="button">Voltar</a>
+
+</form>
+

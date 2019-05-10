@@ -1,0 +1,39 @@
+﻿<form action="/Servico/Adiciona" method="post">
+    @Html.AntiForgeryToken()
+    @*Html.ValidationMessage("produto.Invalido")*@
+
+    <h2>Cadastrar Serviço</h2><br />
+
+    <label for="nome">Nome:</label>
+    <input id="nome" name="servico.Nome" class="form-control" />
+    @*<input id="nome" name="servico.Nome" value="@ViewBag.Servico.Nome"/>*@
+    @Html.ValidationMessage("servico.Nome")
+
+    <label for="tipo">Tipo:</label>
+    <input id="tipo" name="servico.Tipo" class="form-control" />
+    @*<input id="tipo" name="servico.Tipo" value="@ViewBag.Servico.Tipo"/>*@
+    @Html.ValidationMessage("servico.Tipo")
+
+    <label for="valor">Valor:</label>
+    <input id="valor" name="servico.Valor" class="form-control" />
+    @*<input id="valor" name="servico.Valor" value="@ViewBag.Servico.Valor"/>*@
+    @Html.ValidationMessage("servico.Valor")
+
+
+
+
+    @*Adicionar combo_box para determinar uma categoria do produto*@
+    @*<label for="categoria">Categoria:</label>
+        <select id="categoria" name="produto.categoriaId">
+            @foreach (var categoria in ViewBag.Categorias)
+            {
+                <option value="@categoria.Id" selected="@categoria.Id.Equals(ViewBag.Produto.CategoriaId)">
+                @categoria.Nome
+                </option>
+            }
+        </select>*@
+
+    <input type="submit" value="Cadastrar" />
+    <a href="/Servico/Index" class="btn btn-success btn-lg" role="button">Voltar</a>
+
+</form>

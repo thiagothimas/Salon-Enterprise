@@ -1,0 +1,44 @@
+﻿<form action="/Produto/Adiciona" method="post">
+    @Html.AntiForgeryToken()
+    @*Html.ValidationMessage("produto.Invalido")*@
+    <h2>Cadastrar Produto</h2><br />
+
+    <label for="nome">Nome:</label>
+    <input id="nome" name="produto.Nome" class="form-control" />
+    @*<input id="nome" name="produto.Nome" value="@ViewBag.Produto.Nome"/>*@
+    @Html.ValidationMessage("produto.Nome")
+
+    <label for="tipo">Tipo:</label>
+    <input id="tipo" name="produto.Tipo" class="form-control" />
+    @*<input id="nome" name="produto.Nome" value="@ViewBag.Produto.Nome"/>*@
+
+    <label for="descricao">Descricão:</label>
+    <input id="descricao" name="produto.Descricao" class="form-control" />
+    @*<input id="descricao" name="produto.Descricao" value="@ViewBag.Produto.Descricao"/>*@
+
+    <label for="valor">Valor:</label>
+    <input id="valor" name="produto.Valor" class="form-control" />
+    @*<input id="valor" name="produto.Valor" value="@ViewBag.Produto.Valor"/>*@
+    @Html.ValidationMessage("produto.Valor")
+
+    <label for="quantidade">Quantidade:</label>
+    <input id="quantidade" name="produto.Quantidade" class="form-control" />
+    @*<input id="nome" name="produto.Nome" value="@ViewBag.Produto.Nome"/>*@
+    @Html.ValidationMessage("produto.Quantidade")
+
+
+    @*Adicionar combo_box para determinar uma categoria do produto*@
+    @*<label for="categoria">Categoria:</label>
+        <select id="categoria" name="produto.categoriaId">
+            @foreach (var categoria in ViewBag.Categorias)
+            {
+                <option value="@categoria.Id" selected="@categoria.Id.Equals(ViewBag.Produto.CategoriaId)">
+                @categoria.Nome
+                </option>
+            }
+        </select>*@
+
+    <input type="submit" value="Cadastrar" />
+    <a href="/Produto/Index" class="btn btn-success btn-lg" role="button">Voltar</a>
+
+</form>
