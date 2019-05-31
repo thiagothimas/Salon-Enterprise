@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "Busca";
+}
+
+@model SalonEnterpriseAplication.Models.BuscaMovimentacoesModel
+
+@using (Html.BeginForm("Busca", "Movimentacao", FormMethod.Get))
+{
+<div class="row">
+    <fieldset>
+        <h2>Data Movimentacao</h2>
+        <hr style="margin:0; padding:0;" />
+
+        <div class="col-sm-6">
+            @Html.LabelFor(b => b.DataMinima, "Minima")
+            @Html.TextBoxFor(b => b.DataMinima, new { @class = "form-control" })
+        </div>
+        <div class="col-sm-6">
+            @Html.LabelFor(b => b.DataMaxima, "Maxima")
+            @Html.TextBoxFor(b => b.DataMaxima, new { @class = "form-control" })
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <h2>Valor Movimentacao</h2>
+        <hr style="margin:0; padding:0;" />
+
+        <div class="col-sm-6">
+            @Html.LabelFor(b => b.ValorMinimo, "Minimo")
+            @Html.TextBoxFor(b => b.ValorMinimo, new { @class = "form-control" })
+        </div>
+        <div class="col-sm-6">
+            @Html.LabelFor(b => b.ValorMaximo, "Maximo")
+            @Html.TextBoxFor(b => b.ValorMaximo, new { @class = "form-control" })
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <h2>Tipo Movimentacao</h2>
+        <hr style="margin:0; padding:5px;" />
+
+        <div class="col-sm-6">
+            @Html.LabelFor(b => b.Tipo, "Tipo")
+            @Html.EnumDropDownListFor(b => b.Tipo, new { @class = "form-control" })
+        </div>
+        <div class="col-sm-6">
+            @Html.LabelFor(b => b.FuncionarioId, "Funcionario")
+            @Html.DropDownListFor(b => b.FuncionarioId, 
+                                  new SelectList(Model.funcionarios, "Id", "Nome"),
+                                  "Escolha um usuario" )
+        </div>
+    </fieldset>
+    <input type="submit" value="Buscar" />
+</div>
+}
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Data</th>
+            <th>Valor</th>
+            <th>Tipo</th>
+            <th>Funcionario</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model.Movimentacoes)
+        {
+        <tr>
+            <td>@m.Data</td>
+            <td>@m.Valor</td>
+            <td>@m.Tipo</td>
+            @foreach (var func in ViewBag.Funcionarios)
+            {
+                if (m.FuncionarioId.Equals(func.Id))
+                {
+                    <td>@func.Nome</td>
+                }
+            }
+        </tr>
+        }
+    </tbody>
+</table>
+<a href="/Home/Index2" class="btn btn-primary">Menu Principal</a>

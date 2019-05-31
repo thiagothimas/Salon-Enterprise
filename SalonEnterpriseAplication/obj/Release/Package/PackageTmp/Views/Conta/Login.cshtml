@@ -1,0 +1,43 @@
+﻿@using Microsoft.Owin.Security
+
+@model SalonEnterpriseAplication.ViewModels.ContaLoginViewModel
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="login-page form-login">
+    <h2>Login</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+
+        @Html.EditorForModel()
+
+        @Html.ActionLink("Esqueci minha senha.", "EsqueciSenha")
+
+        <input type="submit" value="Login" />
+    }
+
+
+    @using (Html.BeginForm("LoginPorAutenticacaoExterna", "Conta"))
+    {
+        var providersAutenticacao = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();
+
+        if (providersAutenticacao != null && providersAutenticacao.Any())
+        {
+            foreach (var provider in providersAutenticacao)
+            {
+        <button value="@provider.AuthenticationType" name="provider">
+            <img class="google-btn" src="~/imagens/google_btn.png" title="Clique Aqui"/>
+            @*@provider.Caption*@
+        </button>
+            }
+        }
+    }
+
+
+
+</div>
