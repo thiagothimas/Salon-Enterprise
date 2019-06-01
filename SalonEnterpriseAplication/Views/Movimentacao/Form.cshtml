@@ -1,30 +1,37 @@
-﻿
-@{
-    ViewBag.Title = "Form";
-}
+﻿<div class="movimentacao">
+    <h2>Nova Movimentação</h2>
 
-@model SalonEnterpriseAplication.Models.Movimentacao
 
-@using (Html.BeginForm("Adiciona", "Movimentacao", FormMethod.Post))
-{
-    @Html.LabelFor(m => m.Valor, "Valor:")
-    @Html.TextBoxFor(m => m.Valor, new { @class = "form-control" })
-    @Html.ValidationMessageFor(m => m.Valor)
+    @{
+        ViewBag.Title = "Form";
+    }
 
-    @Html.LabelFor(m => m.FuncionarioId, "Funcionario:")
-    @Html.DropDownListFor(m => m.FuncionarioId, new SelectList(ViewBag.Funcionarios, "Id", "Nome"), new { @class="form-control"})
-    @Html.ValidationMessageFor(m => m.FuncionarioId)
+    @model SalonEnterpriseAplication.Models.Movimentacao
 
-    @Html.LabelFor(m => m.Tipo, "Tipo:")
-    @Html.EnumDropDownListFor(m => m.Tipo, new { @class = "form-control" })
-    @Html.ValidationMessageFor(m => m.Tipo)
+    @using (Html.BeginForm("Adiciona", "Movimentacao", FormMethod.Post))
+    {
+        @Html.LabelFor(m => m.Valor, "Valor:")
+        @Html.TextBoxFor(m => m.Valor, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Valor)
 
-    @Html.LabelFor(m => m.Data, "Data:")
-    @Html.TextBoxFor(m => m.Data, new { @class = "form-control" })
-    @Html.ValidationMessageFor(m => m.Data)
+        @Html.LabelFor(m => m.FuncionarioId, "Funcionario:")
+        @Html.DropDownListFor(m => m.FuncionarioId, new SelectList(ViewBag.Funcionarios, "Id", "Nome"), new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.FuncionarioId)
 
-    <input type="submit" value="Enviar" />
+        @Html.LabelFor(m => m.Tipo, "Tipo:")
+        @Html.EnumDropDownListFor(m => m.Tipo, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Tipo)
 
-}
-    <a href="/Home/Index2" class="btn btn-primary">Menu Principal</a>
+        @Html.LabelFor(m => m.Data, "Data:")
+        @Html.TextBoxFor(m => m.Data, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Data)
+
+        <input type="submit" value="Enviar" />
+        <a href="/Home/Index2" class="btn-voltar" role="button">Voltar</a>
+
+    }
+
+    @*<a href="/Home/Index2" class="btn btn-primary">Menu Principal</a>*@
+
+</div>
 

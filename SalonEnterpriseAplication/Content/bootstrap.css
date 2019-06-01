@@ -314,8 +314,6 @@ html {
 
 body {
   /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
-  font-size: 14px;
-  line-height: 1.428571429;
   /*color: #333333;
   background-color: #ffffff;*/
 }
@@ -336,22 +334,22 @@ textarea {
   background-image: none;
 }
 
-a {
+/*a {
   color: #428bca;
   text-decoration: none;
-}
+}*/
 
-a:hover,
+/*a:hover,
 a:focus {
   color: #2a6496;
   text-decoration: underline;
-}
+}*/
 
-a:focus {
+/*a:focus {
   outline: thin dotted #333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
-}
+}*/
 
 img {
   vertical-align: middle;
@@ -408,7 +406,7 @@ p {
 
 .lead {
   margin-bottom: 20px;
-  font-size: 16.099999999999998px;
+  font-size: 17px;
   font-weight: 200;
   line-height: 1.4;
 }
@@ -758,12 +756,12 @@ pre code {
   overflow-y: scroll;
 }
 
-.container {
+/*.container {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-}
+}*/
 
 .container:before,
 .container:after {
@@ -927,9 +925,9 @@ pre code {
 }
 
 @media (min-width: 768px) {
-  .container {
+  /*.container {
     max-width: 750px;
-  }
+  }*/
   .col-sm-1,
   .col-sm-2,
   .col-sm-3,
@@ -1081,9 +1079,9 @@ pre code {
 }
 
 @media (min-width: 992px) {
-  .container {
+  /*.container {
     max-width: 970px;
-  }
+  }*/
   .col-md-1,
   .col-md-2,
   .col-md-3,
@@ -1244,9 +1242,9 @@ pre code {
 }
 
 @media (min-width: 1200px) {
-  .container {
+  /*.container {
     max-width: 1170px;
-  }
+  }*/
   .col-lg-1,
   .col-lg-2,
   .col-lg-3,
@@ -1406,20 +1404,26 @@ pre code {
   }
 }
 
-table {
+/*table {
   max-width: 100%;
   background-color: transparent;
   border-radius:20px;
-}
+}*/
 
 th {
-  text-align: left;
+    text-align: center;
+    font-size: 18px;
+    color: darkblue;
+    font-weight: bold;
 }
 
 .table {
-    width: 100%;
+    text-align: center;
+    width: auto;
+    background-color: lightslategrey;
+    margin-top: 20px;
     margin-bottom: 20px;
-    border-radius: 20px;
+    border: 1px solid #999;
 }
 
 .table thead > tr > th,
@@ -1428,15 +1432,15 @@ th {
 .table thead > tr > td,
 .table tbody > tr > td,
 .table tfoot > tr > td {
-  padding: 8px;
-  line-height: 1.428571429;
-  vertical-align: top;
-  border-top: 1px solid #dddddd;
+    padding: 8px;
+    line-height: 1.428571429;
+    vertical-align: top;
+    border: 1px solid #999;
 }
 
 .table thead > tr > th {
-  vertical-align: bottom;
-  border-bottom: 2px solid #dddddd;
+    vertical-align: bottom;
+    border: 1px solid #999;
 }
 
 .table caption + thead tr:first-child th,
@@ -1449,7 +1453,7 @@ th {
 }
 
 .table tbody + tbody {
-  border-top: 2px solid #dddddd;
+  border-top: 1px solid #999;
 }
 
 .table .table {
@@ -1462,7 +1466,7 @@ th {
 .table-condensed thead > tr > td,
 .table-condensed tbody > tr > td,
 .table-condensed tfoot > tr > td {
-  padding: 5px;
+  padding: 8px;
 }
 
 .table-bordered {
@@ -1490,7 +1494,7 @@ th {
 
 .table-hover > tbody > tr:hover > td,
 .table-hover > tbody > tr:hover > th {
-  background-color: #f5f5f;
+    background-color: #428bca;
 }
 
 table col[class*="col-"] {
@@ -5338,9 +5342,8 @@ a.list-group-item:focus {
 }
 
 .panel-body {
-  margin: 5%;
-  height: auto;
-  width: auto;
+    width: auto;
+    height: auto;
 }
 
 .panel-body:before,

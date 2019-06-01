@@ -3,19 +3,18 @@
 <table class="table table-hover">
     <thead>
         <tr>
-            <th>Nome do Produto</th>
-            <th>Preco</th>
+            <th>Produtos</th>
+            <th>Preço</th>
             <th>Tipo</th>
             <th>Quantidade</th>
-            <th>Descricao</th>
-            <th>Remover Produto</th>
+            <th>Descrição</th>
+            <th>Remover</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var produto in Model)
         {
         <tr>
-
             <td>
                 @*Tem valores no banco que o nome ou o Id esta vazio por isso esta dando erro*@
                 @Html.ActionLink(produto.Nome, "Visualiza", new { id = produto.Id })
@@ -30,13 +29,16 @@
                 @*<a href="/Produto/DecrementaQtd/@produto.Id">Decrementar</a>*@
                 @*<a href="#" onclick="decrementa(@produto.Id)">Decrementar</a>*@
 
-                <a class="far fa-trash-alt" href="/Produto/RemoverProduto/@produto.Id"></a>
+                <a class="lixo far fa-trash-alt" href="/Produto/RemoverProduto/@produto.Id"></a>
             </td>
         </tr>
         }
     </tbody>
 </table>
+
 <a href="/Home/Index2" class="btn btn-primary">Menu Principal</a>
+<a href="/Produto/Form" class="btn btn-primary">Novo Produto</a>
+
 @*<script type="text/javascript" src="~/Scripts/jquery-1.10.2.js"></script>
     <script type="text/javascript">
         function decrementa(produtoId) {
@@ -48,4 +50,3 @@
             $("#quantidade" + resposta.Id).html(resposta.Quantidade);
         }
     </script>*@
-
