@@ -1,0 +1,32 @@
+﻿<form class="login-page" action="/ClienteServico/Adiciona" method="post">
+
+    @Html.AntiForgeryToken()
+    @*Html.ValidationMessage("produto.Invalido")*@
+    <h2>Cadastro de serviço ao Cliente</h2><br />
+
+    @*Adicionar combo_box para determinar uma categoria do produto*@
+    <label for="servico">Serviço:</label>
+        <select id="servico" name="clienteServico.ServicosRealizadosId">
+            @foreach (var servico in ViewBag.ServicosRealizados)
+            {
+                <option value="@servico.Id" selected="@servico.Id.Equals(ViewBag.ServicosRealizados.Id)">
+                @servico.Id
+                </option>
+            }
+        </select>
+
+    @*Adicionar combo_box para determinar uma categoria do produto*@
+    <label for="cliente">Cliente:</label>
+        <select id="cliente" name="cliente.Id">
+            @foreach (var cliente in ViewBag.Clientes)
+            {
+                <option value="@cliente.Id" selected="@cliente.Id.Equals(ViewBag.ClienteServico.ClienteId)">
+                @cliente.Id
+                </option>
+            }
+        </select>
+
+    <input type="submit" value="Cadastrar" />
+    <a href="/Home/Index2" class="btn-voltar" role="button">Voltar</a>
+
+</form>

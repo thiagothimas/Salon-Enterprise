@@ -1,0 +1,51 @@
+﻿@model IList<SalonEnterpriseAplication.Models.Funcionario>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Nome do Profissional</th>
+            <th>Telefone</th>
+            <th>Endereço</th>
+            <th>Sexo</th>
+            <th>Cargo</th>
+            <th>Remover</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var funcionario in Model)
+        {
+            <tr>
+
+                <td>
+                    @*Tem valores no banco que o nome ou o Id esta vazio por isso esta dando erro*@
+                    @Html.ActionLink(funcionario.Nome, "Visualiza", new { id = funcionario.Id })
+                    @*Html.RouteLink(produto.Nome, "VisualizaProduto", new { id = produto.Id })*@
+                </td>
+                <td>@funcionario.Telefone</td>
+                <td>@funcionario.Endereco</td>
+                <td>@funcionario.Sexo</td>
+                <td>@funcionario.Cargo</td>
+                <td>
+                    @*<a href="/Produto/DecrementaQtd/@produto.Id">Decrementar</a>*@
+                    @*<a href="#" onclick="decrementa(@produto.Id)">Decrementar</a>*@
+
+                    <a class="far fa-trash-alt" href="/Funcionario/RemoverFuncionarios/@funcionario.Id"></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Home/Index2" class="btn btn-primary">Menu Principal</a>
+
+@*<script type="text/javascript" src="~/Scripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+        function decrementa(produtoId) {
+            var url = "@Url.Action("DecrementaQtd", "Produto")";
+            $.post(url, { id: produtoId }, atualiza);
+        }
+
+        function atualiza(resposta) {
+            $("#quantidade" + resposta.Id).html(resposta.Quantidade);
+        }
+    </script>*@

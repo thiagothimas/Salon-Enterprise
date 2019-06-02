@@ -1,0 +1,80 @@
+﻿
+<div class="titulo_cad">
+    <center><h1>Cadastrar Cliente</h1></center>
+</div>
+
+
+<form action="/Cliente/Adiciona" method="post">
+    @Html.AntiForgeryToken()
+    @*Html.ValidationMessage("cliente.Invalido")*@
+
+    <div class="form_geral">
+
+        <div class="form_geral_2">
+
+            <label for="nome">Nome:</label>
+            <input id="nome" name="cliente.Nome" class="form-control" />
+            @*<input id="nome" name="cliente.Nome" value="@ViewBag.Cliente.Nome"/>*@
+            @Html.ValidationMessage("cliente.Nome")
+
+            <label for="telefone">Telefone:</label>
+            <input id="telefone" name="cliente.Telefone" class="form-control" />
+            @*<input id="nome" name="cliente.Telefone" value="@ViewBag.Cliente.Telefone"/>*@
+            @Html.ValidationMessage("cliente.Telefone")
+
+            <label for="dataDeNascimento">Data de Nascimento:</label>
+            <input id="dataDeNascimento" name="cliente.DataDeNascimento" class="form-control" />
+            @*<input id="dataDeNascimento" name="cliente.DataDeNascimento" value="@ViewBag.Cliente.DataDeNascimento"/>*@
+            @Html.ValidationMessage("cliente.DataDeNascimento")
+
+            <label for="endereco">Endereço:</label>
+            <input id="endereco" name="cliente.Endereco" class="form-control" />
+            @*<input id="nome" name="cliente.Endereco" value="@ViewBag.Cliente.Endereco"/>*@
+            @Html.ValidationMessage("cliente.Endereco")
+
+        </div>
+
+        <div class="form_geral_2">
+
+            <label for="sexo">Sexo:</label>
+            <input id="sexo" name="cliente.Sexo" class="form-control" />
+            @*<input id="nome" name="cliente.Sexo" value="@ViewBag.Cliente.Sexo"/>*@
+            @Html.ValidationMessage("cliente.Sexo")
+
+            <label for="rg">RG:</label>
+            <input id="rg" name="cliente.Rg" class="form-control" />
+            @*<input id="nome" name="cliente.Rg" value="@ViewBag.Cliente.Rg"/>*@
+            @Html.ValidationMessage("cliente.Rg")
+
+            <label for="cpf">CPF:</label>
+            <input id="cpf" name="cliente.Cpf" class="form-control" />
+            @*<input id="cpf" name="cliente.Cpf" value="@ViewBag.Cliente.Cpf"/>*@
+            @Html.ValidationMessage("cliente.Cpf")
+
+        </div>
+
+    </div>
+
+    @*Adicionar combo_box para determinar uma categoria do produto*@
+    @*<label for="categoria">Categoria:</label>
+        <select id="categoria" name="produto.categoriaId">
+            @foreach (var categoria in ViewBag.Categorias)
+            {
+                <option value="@categoria.Id" selected="@categoria.Id.Equals(ViewBag.Produto.CategoriaId)">
+                @categoria.Nome
+                </option>
+            }
+        </select>*@
+
+    <div class="btn-cad-voltar">
+
+        <input type="submit" value="Cadastrar" />
+        <a href="/Home/Index2" class="btn-voltar" role="button">Voltar</a>
+
+    </div>
+
+</form>
+
+
+
+

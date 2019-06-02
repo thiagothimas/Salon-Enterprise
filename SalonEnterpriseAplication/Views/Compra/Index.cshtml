@@ -1,0 +1,42 @@
+﻿@model IList<SalonEnterpriseAplication.Models.Compra>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Data da Compra</th>
+            <th>Valor Total</th>
+            <th>Quantidade</th>
+            <th>Fornecedor</th>
+            <th>Remover Compra</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var compra in Model)
+        {
+        <tr>
+
+            <td>
+                @*Tem valores no banco que o nome ou o Id esta vazio por isso esta dando erro*@
+                @compra.DataCompra
+                @*Html.RouteLink(produto.Nome, "VisualizaProduto", new { id = produto.Id })*@
+            </td>
+            <td>@compra.ValorTotal</td>
+            <td>@compra.Quantidade</td>
+            @foreach (var forn in ViewBag.Fornecedores)
+            {
+                if (compra.FornecedorId.Equals(forn.Id))
+                {
+                    <td>@forn.Nome</td>
+                }
+            }
+            <td>
+                @*<a href="/Produto/DecrementaQtd/@produto.Id">Decrementar</a>*@
+                @*<a href="#" onclick="decrementa(@produto.Id)">Decrementar</a>*@
+
+                <a class="far fa-trash-alt" href="/Compra/RemoverCompra/@compra.Id"></a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+<a href="/Home/Index2" class="btn btn-primary">Menu Principal</a>

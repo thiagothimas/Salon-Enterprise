@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Form";
+}
+
+@model SalonEnterpriseAplication.Models.Compra
+
+@using (Html.BeginForm("Adiciona", "Compra", FormMethod.Post))
+{
+    @Html.LabelFor(c => c.DataCompra, "Data Compra:")
+    @Html.TextBoxFor(m => m.DataCompra, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.DataCompra)
+
+    @Html.LabelFor(c => c.ValorTotal, "Valor Total:")
+    @Html.TextBoxFor(c => c.ValorTotal, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.ValorTotal)
+
+    @Html.LabelFor(c => c.Quantidade, "Quantidade:")
+    @Html.TextBoxFor(c => c.Quantidade, new { @class = "form-control" })
+    @Html.ValidationMessageFor(c => c.Quantidade)
+
+    @Html.LabelFor(c => c.FornecedorId, "Fornecedor:")
+    @Html.DropDownListFor(m => m.FornecedorId, new SelectList(ViewBag.Fornecedores, "Id", "Nome"), new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.FornecedorId)
+
+    <input type="submit" value="Enviar" />
+
+}
+<a href="/Home/Index2" class="btn btn-primary">Menu Principal</a>

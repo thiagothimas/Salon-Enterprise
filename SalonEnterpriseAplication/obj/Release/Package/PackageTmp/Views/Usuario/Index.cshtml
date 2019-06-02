@@ -1,0 +1,54 @@
+﻿@model IEnumerable<SalonEnterpriseAplication.ViewModels.UsuarioViewModel>
+@using Microsoft.AspNet.Identity
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lista de acessos.</h2>
+<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-right">
+
+        @if (Request.IsAuthenticated)
+        {
+            <a href="/Conta/Registrar" class="btn btn-primary">Registrar</a><br />
+        }
+    </ul>
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeCompleto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeCompleto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.ActionLink("Editar funções", "EditarFuncoes", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
